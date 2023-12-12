@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/sb_size_12"
+    android:paddingRight="@dimen/sb_size_12"
+    android:paddingTop="8dp"
+    android:clipChildren="false"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivProfileView"
+        android:layout_width="@dimen/sb_size_26"
+        android:layout_height="@dimen/sb_size_26"
+        android:scaleType="centerCrop"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/tvMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/cardView3"
+        tools:src="@tools:sample/avatars"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/sb_size_50"
+        android:paddingRight="@dimen/sb_size_50"
+        android:paddingBottom="4dp"
+        android:textStyle="bold"
+        android:textSize="@dimen/sb_text_size_12"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="jerrybot"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMessage"
+        style="@style/Widget.Sendbird.Message.Other.User"
+        android:maxWidth="@dimen/sb_message_max_width"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:layout_marginStart="@dimen/sb_size_12"
+        android:layout_marginLeft="@dimen/sb_size_12"
+        android:layout_marginEnd="@dimen/sb_size_4"
+        android:layout_marginRight="@dimen/sb_size_4"
+        android:padding="@dimen/sb_size_10"
+        android:background="@drawable/sb_shape_chat_bubble"
+        android:backgroundTint="@color/background_100"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@id/cardView1"
+        app:layout_constraintEnd_toStartOf="@id/tvSentAt"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/ivProfileView"
+        app:layout_constraintTop_toBottomOf="@id/tvNickname"
+        tools:text="Here is your order list:\nWhat would you like to do next?"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSentAt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/sb_size_0"
+        android:layout_marginLeft="@dimen/sb_size_4"
+        android:textSize="@dimen/sb_text_size_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/brBottom"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@id/tvMessage"
+        tools:text="8:28 PM"
+        />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/brBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="ivProfileView,tvMessage,tvSentAt" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:elevation="1dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="@id/tvMessage"
+        app:layout_constraintStart_toStartOf="@id/tvMessage"
+        app:layout_constraintTop_toBottomOf="@id/tvMessage"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="✅ Order #1" />
+
+            <TextView
+                android:id="@+id/description1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="16sp"
+                tools:text="Delivered" />
+
+            <TextView
+                android:id="@+id/items1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#F0F0F0"
+                android:padding="8dp"
+                tools:text="Items: t-shirt, pants" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:elevation="1dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="@id/tvMessage"
+        app:layout_constraintStart_toStartOf="@id/tvMessage"
+        app:layout_constraintTop_toBottomOf="@id/cardView1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="✅ Order #2" />
+
+            <TextView
+                android:id="@+id/description2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="16sp"
+                tools:text="Delivered" />
+
+            <TextView
+                android:id="@+id/items2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#F0F0F0"
+                android:padding="8dp"
+                tools:text="Items: t-shirt, pants" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:elevation="1dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="@id/tvMessage"
+        app:layout_constraintStart_toStartOf="@id/tvMessage"
+        app:layout_constraintTop_toBottomOf="@id/cardView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="✅ Order #3" />
+
+            <TextView
+                android:id="@+id/description3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="16sp"
+                tools:text="Delivered" />
+
+            <TextView
+                android:id="@+id/items3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#F0F0F0"
+                android:padding="8dp"
+                tools:text="Items: t-shirt, pants" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="8dp"
+        app:layout_constraintTop_toBottomOf="@id/cardView3"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
