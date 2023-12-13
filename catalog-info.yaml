@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Sendbird AI Chatbot Sample for Android
+  description: Sendbird AI Chatbot Sample for Android
+  annotations:
+    github.com/project-slug: sendbird/sendbird-ai-chatbot-sample-android
+spec:
+  type: library
+  lifecycle: production
+  owner: team_developer_experience
+  system: sendbird-chat
